@@ -1,11 +1,11 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiKey = import.meta.env.VITE_API_KEY;
 
 
-if (!apiKey) {
-    throw new Error("API Key is missing. Ensure VITE_API_KEY is set in your .env file.");
-}
+// if (!apiKey) {
+//     throw new Error("API Key is missing. Ensure VITE_API_KEY is set in your .env file.");
+// }
 
 export async function getContent(payload) {
     const { message, mode } = payload;
@@ -15,8 +15,8 @@ export async function getContent(payload) {
         throw new Error("Payload must include both 'message' and 'mode'.");
     }
 
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); 
+    // const genAI = new GoogleGenerativeAI(apiKey);
+    // const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); 
 
     if(mode === "mindmap"){
         prompt = `${message}\n
