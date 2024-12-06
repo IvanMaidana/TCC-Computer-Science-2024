@@ -28,14 +28,38 @@ export async function getContent(payload) {
     } else if (mode === "content"){
         prompt = `${message}\nResponda de forma clara. Não use formatações de Markdown.`;
     }
-    try {
-            const result = await model.generateContent(prompt);
+    // try {
+    //         const result = await model.generateContent(prompt);
             
-            console.log(result.response.text());
-            console.log(result);
-            return result.response.text();
-        } catch (error) {
-            console.error("Error in generating: ", error);
-            throw new Error(`Failed to generate ${mode}.`);
-        }
+    //         console.log(result.response.text());
+    //         console.log(result);
+    //         return result.response.text();
+    //     } catch (error) {
+    //         console.error("Error in generating: ", error);
+    //         throw new Error(`Failed to generate ${mode}.`);
+    //     }
+    return(`# Linguagem C
+
+- **Características Gerais**
+    - Linguagem de propósito geral
+    - Compilada, não interpretada
+    - Procedural
+    - Portável entre sistemas operacionais
+    - Base para muitas linguagens modernas (C++, C#, Java)
+        
+- **Estrutura Básica**
+    - Arquivo principal: \`.c\`
+    - Função principal: \`main()\`
+    - Diretivas de pré-processador: \`#include\`, \`#define\`
+    - Sintaxe básica:
+    - Início e fim com
+    - Instruções terminadas por \`;\`
+        
+ - **Tipos de Dados**
+    - Primitivos
+    - \`int\`: Números inteiros
+    - \`float\`: Números de ponto flutuante
+    - \`double\`: Precisão dupla
+    - \`char\`: Caractere único
+`)
 } 
