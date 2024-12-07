@@ -20,6 +20,8 @@ export function MindMapViewer({ markdown }) {
 
         divRef.current.appendChild(svg);
 
+        // svg.offsetWidth;
+
         // Cria o mapa mental no SVG
         const mm = Markmap.create(svg); 
         const { root } = transformer.transform(markdown); 
@@ -50,13 +52,12 @@ export function MindMapViewer({ markdown }) {
 
         // Usa html2canvas para capturar o conteúdo da div
         html2canvas(divRef.current).then((canvas) => {
-            const pdf = new jsPDF("landscape", "mm", "a4");
+            const pdf = new jsPDF("landscape", "mm", [300, 200]);
             const imgData = canvas.toDataURL("image/png");
-            const imgWidth = 297; // Largura em mm para A4 landscape
+            const imgWidth = 300; // Largura em mm para A4 landscape
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-            let position = 0;
-            pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+            pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
             pdf.save("mapa-mental.pdf"); // Nome do arquivo PDF
         });
     };
@@ -67,18 +68,19 @@ export function MindMapViewer({ markdown }) {
                 width: "100%",
                 height: "100%vh",
                 backgroundColor: "#f9f9f9",
-                border: "1px solid #ccc",
-                borderRadius: "8px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                padding: "10px",
+                padding: "1rem",
             }}
         >
             {/* Div para o SVG */}
             <div
                 ref={divRef}
                 style={{
+                    display: "flex", // Habilita Flexbox
+                    justifyContent: "center", // Centraliza horizontalmente
+                    alignItems: "center", // Centraliza verticalmente
                     width: "100%",
-                    height: "calc(100% - 50px)",
+                    height: "calc(100% - 50px)", // Altura ajustada para incluir espaço para botões
+                    overflow: "hidden", // Garante que elementos fora do contêiner não sejam exibidos
                 }}
             ></div>
 

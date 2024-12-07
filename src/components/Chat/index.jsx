@@ -3,6 +3,7 @@ import { Input } from "../Input";
 import { ChatContainer, MessagesContainer, MessageBubble } from "./styles";
 import { getContent } from "../../ContentService";
 import { MindMapViewer } from "../MindMap"; // Importa o novo componente
+import { createRoot } from "react-dom/client";
 
 
 export function Chat({ selectedOption }) {
@@ -53,6 +54,7 @@ export function Chat({ selectedOption }) {
             const rootDiv = newWindow.document.createElement("div");
             newWindow.document.body.appendChild(rootDiv);
 
+            // Renderiza o MindMapViewer com o conteúdo Markdown
             // Renderiza o MindMapViewer com o conteúdo Markdown
             import("react-dom").then((ReactDOM) => {
                 ReactDOM.createRoot(rootDiv).render(

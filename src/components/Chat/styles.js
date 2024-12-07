@@ -6,7 +6,7 @@ export const ChatContainer = styled.div`
     flex-direction: column;
     width: 100%;
     max-width: 80%;
-    height: 75vh;
+    height: 95vh;
     margin: 0 auto;
     background-color: #3c6975;
     border-radius: 10px;
@@ -19,8 +19,8 @@ export const ChatContainer = styled.div`
 export const MessagesContainer = styled.div`
     flex: 1;
     padding: 1rem;
+    padding-bottom: 3.5rem;
     overflow-y: auto;
-    /* background-color: #ffffff; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -35,5 +35,4 @@ export const MessageBubble = styled.div`
     max-width: 90%;
     align-self: ${({ sender }) => (sender === "user" ? "flex-end" : "flex-start")};
     word-wrap: break-word;
-    
 `;

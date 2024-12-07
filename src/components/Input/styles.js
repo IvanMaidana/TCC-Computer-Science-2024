@@ -7,11 +7,11 @@ export const Container = styled.div`
     background-color: aliceblue;
     justify-content: center;
     min-height: 3rem;
-    max-height: 15rem;
-    border-radius: 15px;
+    max-height: 10rem;
+    border-radius: 1.2rem;
     margin: 0 auto;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
     left: 0;
     right: 0;
 
