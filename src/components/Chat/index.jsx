@@ -41,14 +41,13 @@ export function Chat({ selectedOption }) {
     // Função para abrir o componente de mapa mental em uma nova guia
     const openMindMapViewer = (markdown) => {
 
-        // const width = screen.width; // Largura total da tela
-        // const height = screen.height; // Altura total da tela
+        const width = screen.width-20; // Largura total da tela
+        const height = screen.height-20; // Altura total da tela
 
-        // let features = `width=${width},height=${height},top=0,left=0`;
-        // features = features.toString;
+        let features = `width=${width},height=${height}`;
 
-        //const newWindow = window.open("", "_blank", features);
-        const newWindow = window.open("", "_blank",  "width=1280", "height=720");
+        const newWindow = window.open("", "_blank", features);
+        //const newWindow = window.open("", "_blank",  "width=1280", "height=720");
         if (newWindow) {
             newWindow.document.title = "Mapa Mental";
 
