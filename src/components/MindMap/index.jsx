@@ -65,8 +65,8 @@ export function MindMapViewer({ markdown }) {
     return (
         <div
             style={{
-                width: "100%",
-                height: "100%vh",
+                width: "100vw",
+                height: "100vh",
                 backgroundColor: "#f9f9f9",
                 padding: "1rem",
             }}
@@ -75,12 +75,8 @@ export function MindMapViewer({ markdown }) {
             <div
                 ref={divRef}
                 style={{
-                    display: "flex", // Habilita Flexbox
-                    justifyContent: "center", // Centraliza horizontalmente
-                    alignItems: "center", // Centraliza verticalmente
-                    width: "100%",
-                    height: "calc(100% - 50px)", // Altura ajustada para incluir espaço para botões
-                    overflow: "hidden", // Garante que elementos fora do contêiner não sejam exibidos
+                    width: "100vw",
+                    height: "calc(100vh - 5rem)", // Altura ajustada para incluir espaço para botões
                 }}
             ></div>
 
@@ -88,21 +84,22 @@ export function MindMapViewer({ markdown }) {
             <div
                 style={{
                     position: "relative",
-                    bottom: "20px",
-                    right: "10px", 
+                    bottom: "2rem",
+                    left: "1rem", 
                     display: "flex",
-                    gap: "10px",
+                    gap: "1rem",
                 }}
             >
+
                 <button
                     onClick={handleDownloadPNG}
                     style={{
-                        padding: "10px 20px",
-                        fontSize: "16px",
+                        padding: "1rem 2rem",
+                        fontSize: "1.6rem",
                         backgroundColor: "#007bff",
                         color: "#fff",
                         border: "none",
-                        borderRadius: "4px",
+                        borderRadius: "5px",
                         cursor: "pointer",
                     }}
                 >
@@ -111,12 +108,12 @@ export function MindMapViewer({ markdown }) {
                 <button
                     onClick={handleDownloadPDF}
                     style={{
-                        padding: "10px 20px",
-                        fontSize: "16px",
+                        padding: "1rem 2rem",
+                        fontSize: "1.6rem",
                         backgroundColor: "#28a745",
                         color: "#fff",
                         border: "none",
-                        borderRadius: "4px",
+                        borderRadius: "5px",
                         cursor: "pointer",
                     }}
                 >
